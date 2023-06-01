@@ -5,12 +5,16 @@ import "./HomePage.css";
 import Header from "../Header/Header";
 
 function HomePage() {
-  const { user, logout, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const [city, setCity] = useState("");
   const navigate = useNavigate();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
   if (!isAuthenticated) {
@@ -44,18 +48,13 @@ function HomePage() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               required
+              className="input"
             />
           </label>
-          <button type="submit">Get Weather</button>
+          <button type="submit" className="button">
+            Get Weather
+          </button>
         </form>
-        <button
-          onClick={() =>
-            logout({ logoutParams: { returnTo: window.location.origin } })
-          }
-          className="button"
-        >
-          Log Out
-        </button>
       </div>
     </div>
   );

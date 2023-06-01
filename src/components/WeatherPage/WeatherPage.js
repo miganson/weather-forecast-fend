@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Navigate, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
-import Header from '../Header/Header';
+import Header from "../Header/Header";
 import "./WeatherPage.css"; // Importing your new CSS file
 
 function WeatherPage() {
@@ -27,21 +27,17 @@ function WeatherPage() {
     fetchWeatherData();
   }, [city]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
-
-  if (!weather) {
-    return <div>Loading...</div>;
+  if (isLoading || !isAuthenticated || !weather) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
   return (
     <div className="weatherPage">
-        <Header />
+      <Header />
       <h1 className="city">Weather for {city}</h1>
       <table>
         <thead>
@@ -65,7 +61,7 @@ function WeatherPage() {
           </tr>
         </tbody>
       </table>
-      <button className="button" onClick={() => navigate(-1)}>
+      <button className="backButton" onClick={() => navigate(-1)}>
         Back
       </button>
     </div>

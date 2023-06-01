@@ -1,17 +1,25 @@
-import React from 'react';
+import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import './Header.css';
+import "./Header.css";
 
 function Header() {
-  const { logout, isAuthenticated } = useAuth0();
+  const { logout, isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="header">
       <h1>Weather Forecast</h1>
       {isAuthenticated && (
-        <button 
+        <button
           onClick={() => logout({ returnTo: window.location.origin })}
-          className="button"
+          className="header-button"
         >
           Log Out
         </button>

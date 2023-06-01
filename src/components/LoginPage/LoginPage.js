@@ -13,11 +13,14 @@ function LoginPage() {
     <div className="container">
       <Header />
       <div className="loginPage">
+        <div className="welcome-text">
+          Welcome to the Weather Forecast App. Please log in with your GitHub
+          account to use the application and view the weather in your city.
+        </div>
         <button onClick={() => loginWithRedirect()} className="button">
           Log In
         </button>
       </div>
-      ;
     </div>
   );
 }

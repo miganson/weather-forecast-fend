@@ -3,10 +3,14 @@
   flex-direction: column;
   align-items: center;
   padding-top: 130px; /* Adjust this value based on the height of your header */
+  font-family: Arial, sans-serif;
 }
 
 .city {
   text-transform: capitalize;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 table {
@@ -15,26 +19,53 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
   margin-bottom: 20px;
+  table-layout: fixed; /* Add this property to enforce a fixed layout */
 }
 
 th,
 td {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 5px;
+  word-break: break-word; /* Add this property to allow cell contents to wrap */
+  white-space: normal; /* Add this property to enable wrapping */
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+td:nth-child(odd) {
+  background-color: #f2f2f2;
 }
 
 .backButton {
   align-self: flex-end;
   margin-right: 20px;
+  padding: 0.6em 1em;
+  font-size: 14px;
+  width: 5rem;
+  max-width: 400px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
   table {
     font-size: 14px;
+    max-width: 100%; /* Set the maximum width to 100% on smaller screens */
   }
 
   .backButton {
     margin-right: 10px;
+  }
+
+  th:nth-child(n + 3),
+  td:nth-child(n + 3) {
+    display: none;
   }
 }
