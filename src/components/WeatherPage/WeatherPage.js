@@ -7,7 +7,6 @@ import { Navigate } from "react-router-dom";
 import "./WeatherPage.css";
 import { WEATHER_API_BASE_URL } from "../../apiConstants";
 
-
 function WeatherPage() {
   const { city } = useParams();
   const [weather, setWeather] = useState(null);
@@ -15,7 +14,6 @@ function WeatherPage() {
   const navigate = useNavigate();
 
   const [hasError, setHasError] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -28,15 +26,13 @@ function WeatherPage() {
       } catch (error) {
         console.error("Error fetching weather data:", error);
         setHasError(true);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchWeatherData();
   }, [city]);
 
-  if (authLoading || loading) {
+  if (authLoading) {
     return (
       <div className="loading-container">
         <div className="spinner"></div>

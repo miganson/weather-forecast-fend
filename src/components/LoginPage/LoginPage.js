@@ -1,10 +1,7 @@
 import React from "react";
-import Modal from "react-modal";
 import "./LoginPage.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import Header from "../Header/Header";
-
-Modal.setAppElement("#root");
 
 function LoginPage() {
   const { loginWithRedirect, error } = useAuth0();

@@ -39,14 +39,6 @@
   background-color: #0056b3;
 }
 
-.modal {
-  width: 80%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
 @media (max-width: 768px) {
   .container {
     justify-content: flex-start;
