@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Weather Forecast App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for a Weather Forecast App built using React. The app allows users to view the weather forecast for a specific city after logging in with their GitHub account.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To run the code locally, follow these steps:
 
-### `npm start`
+1. Clone the repository to your local machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```shell
+   git clone https://github.com/your-username/weather-forecast-app.git
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project directory.
 
-### `npm test`
+   ```shell
+   cd weather-forecast-app
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the dependencies.
 
-### `npm run build`
+   ```shell
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Create a `.env` file in the root directory of the project and add the following environment variables:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```plaintext
+   REACT_APP_AUTH0_DOMAIN=<your-auth0-domain>
+   REACT_APP_AUTH0_CLIENT_ID=<your-auth0-client-id>
+   REACT_APP_WEATHER_API_KEY=<your-weather-api-key>
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Replace `your-auth0-domain` with your Auth0 domain, `your-auth0-client-id` with your Auth0 client ID, and `your-weather-api-key` with your OpenWeatherMap API key.
 
-### `npm run eject`
+5. Start the development server.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```shell
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Open the app in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   The app should be running at [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Dependencies
 
-## Learn More
+The app has the following dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React
+- React Router DOM
+- Auth0 React
+- Axios
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can find the complete list of dependencies in the `package.json` file.
 
-### Code Splitting
+## Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The app uses Auth0 for authentication. Users need to log in with their GitHub account to access the app.
+- After logging in, users can enter a city name to view the weather forecast for that city.
+- The weather forecast data is fetched from the OpenWeatherMap API using the provided API key.
+- The app includes error handling for invalid city names and network errors.
+- The app displays a loading spinner while fetching weather data.
+- The cloud icon in the header changes based on the weather description. Here's how it works:
+  - If the weather description is "cloudy", the cloud icon is displayed.
+  - If the weather description is "stormy", the lightning bolt icon is displayed.
+  - If the weather description is "Rain", the cloud with rain icon is displayed.
+  - If the weather description is "Clear", the sunny icon is displayed.
+  - For any other weather description, the default cloud icon is displayed.
