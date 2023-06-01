@@ -23,7 +23,7 @@
 
 .input {
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 10px;
   width: 100%;
   box-sizing: border-box; /* Ensure the width includes padding and border */
@@ -65,6 +65,27 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+}
+
+.search-input {
+  position: relative;
+  width: 100%;
+}
+
+.search-input input {
+  padding-right: 30px; /* Adjust this value based on the size of your icon */
+  padding-left: 10px;
+  width: 250px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @keyframes spin {

@@ -3,6 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import Header from "../Header/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function HomePage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -51,13 +53,16 @@ function HomePage() {
         <form onSubmit={handleWeatherNavigation}>
           <label>
             Enter your city:
-            <input
-              type="text"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-              className="input"
-            />
+            <div className="search-input">
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                className="input"
+                required
+              />
+              <FontAwesomeIcon icon={faSearch} className="search-icon" />
+            </div>
           </label>
           <button type="submit" className="button">
             Get Weather
