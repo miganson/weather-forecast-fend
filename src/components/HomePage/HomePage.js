@@ -7,6 +7,7 @@ import Header from "../Header/Header";
 function HomePage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [city, setCity] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   if (isLoading) {
@@ -23,7 +24,12 @@ function HomePage() {
 
   const handleWeatherNavigation = (e) => {
     e.preventDefault();
-    navigate(`/weather/${city}`);
+    if (city.trim() === "") {
+      setError("City name cannot be empty.");
+    } else {
+      setError("");
+      navigate(`/weather/${city}`);
+    }
   };
 
   return (
@@ -32,12 +38,14 @@ function HomePage() {
       <div className="homePage">
         <h1>{user?.name}</h1>
         <p>
+          Visit my GitHub:
           <a
             href={`https://github.com/${user?.nickname}`}
             target="_blank"
             rel="noreferrer"
+            className="github-link"
           >
-            https://github.com/{user?.nickname}
+            {`https://github.com/${user?.nickname}`}
           </a>
         </p>
         <form onSubmit={handleWeatherNavigation}>
@@ -54,6 +62,7 @@ function HomePage() {
           <button type="submit" className="button">
             Get Weather
           </button>
+          {error && <p className="error-message">{error}</p>}
         </form>
       </div>
     </div>

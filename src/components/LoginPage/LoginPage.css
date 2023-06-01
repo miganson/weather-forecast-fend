@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   padding: 0 20px;
   box-sizing: border-box;
+  justify-content: center;
 }
 
 .loginPage {
@@ -48,14 +48,12 @@
 }
 
 @media (max-width: 768px) {
-  .input,
-  .button {
-    width: 100%;
-    max-width: none;
+  .container {
+    justify-content: flex-start;
+    padding-top: 180px;
   }
 
-  .modal {
-    width: 100%;
-    max-width: none;
+  .loginPage {
+    padding-top: 0;
   }
 }

@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 Modal.setAppElement("#root");
 
 function LoginPage() {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, error } = useAuth0();
 
   return (
     <div className="container">
@@ -20,6 +20,7 @@ function LoginPage() {
         <button onClick={() => loginWithRedirect()} className="button">
           Log In
         </button>
+        {error && <p>{error.message}</p>}
       </div>
     </div>
   );

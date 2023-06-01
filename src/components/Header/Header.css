@@ -11,6 +11,24 @@
   background-color: white;
   z-index: 100;
   font-family: Arial, sans-serif;
+  background-image: linear-gradient(to right, white, rgb(231, 231, 111));
+}
+
+.cloud-container {
+  display: flex;
+  align-items: center;
+}
+
+.cloud-icon {
+  font-size: 3rem;
+  color: skyblue;
+  margin-right: 10px;
+}
+
+.sunny-icon {
+  font-size: 3rem;
+  color: rgb(231, 231, 111);
+  margin-right: 10px;
 }
 
 .header-button {
