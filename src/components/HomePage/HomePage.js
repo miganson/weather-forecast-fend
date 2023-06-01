@@ -38,8 +38,8 @@ function HomePage() {
     <div>
       <Header />
       <div className="homePage">
-        <h1>{user?.name}</h1>
-        <p>
+        <h1 className="hide">{user?.name}</h1>
+        <p className="hide">
           Visit my GitHub:
           <a
             href={`https://github.com/${user?.nickname}`}

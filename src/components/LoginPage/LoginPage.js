@@ -2,9 +2,14 @@ import React from "react";
 import "./LoginPage.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import Header from "../Header/Header";
+import { Navigate } from "react-router-dom";
 
 function LoginPage() {
-  const { loginWithRedirect, error } = useAuth0();
+  const { loginWithRedirect, error, isAuthenticated } = useAuth0();
+
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="container">
