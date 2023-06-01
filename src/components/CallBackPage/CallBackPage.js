@@ -3,13 +3,17 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Navigate } from "react-router-dom";
 
 function CallbackPage() {
-  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated, getAccessTokenSilently, loginWithRedirect } =
+    useAuth0();
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      getAccessTokenSilently();
-    }
-  }, [isAuthenticated, getAccessTokenSilently]);
+    useEffect(() => {
+        if (isAuthenticated) {
+          getAccessTokenSilently().catch(e => {
+            console.error(e);
+            loginWithRedirect();
+          });
+        }
+      }, [isAuthenticated, getAccessTokenSilently, loginWithRedirect]);
 
   if (isAuthenticated) {
     return <Navigate to="/" />;

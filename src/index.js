@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { Auth0Provider } from "@auth0/auth0-react";
-import './styles/GlobalStyles.css'
+import "./styles/GlobalStyles.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -13,6 +13,7 @@ root.render(
     authorizationParams={{
       redirect_uri: `${window.location.origin}/callback`,
     }}
+    cacheLocation="localstorage"
   >
     <App />
   </Auth0Provider>
