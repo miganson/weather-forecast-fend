@@ -1,0 +1,40 @@
+.weatherPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 130px; /* Adjust this value based on the height of your header */
+}
+
+.city {
+  text-transform: capitalize;
+}
+
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.backButton {
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    font-size: 14px;
+  }
+
+  .backButton {
+    margin-right: 10px;
+  }
+}

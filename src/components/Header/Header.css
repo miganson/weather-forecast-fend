@@ -1,0 +1,19 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    z-index: 100;
+  }
+  
+  
+  .logoutButton {
+    padding: 0.5em 1em;
+  }
+  
