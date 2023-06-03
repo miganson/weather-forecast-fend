@@ -12,24 +12,27 @@ function CallbackPage() {
   } = useAuth0();
 
   useEffect(() => {
-    handleRedirectCallback()
-      .then(() => {
-        if (isAuthenticated) {
-          getAccessTokenSilently().catch((e) => {
-            console.error(e);
-            loginWithRedirect();
-          });
-        }
-      })
-      .catch((e) => {
-        console.error(e);
-      });
+    if (window.location.search) {
+      handleRedirectCallback()
+        .then(() => {
+          if (isAuthenticated) {
+            getAccessTokenSilently().catch((e) => {
+              console.error(e);
+              loginWithRedirect();
+            });
+          }
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    }
   }, [
     isAuthenticated,
     getAccessTokenSilently,
     loginWithRedirect,
     handleRedirectCallback,
   ]);
+  
 
   if (isAuthenticated) {
     return <Navigate to="/" />;
