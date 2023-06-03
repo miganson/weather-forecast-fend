@@ -16,7 +16,9 @@ function Header({ weatherDescription }) {
       ? process.env.REACT_APP_LOCAL_URL
       : process.env.REACT_APP_URL;
 
-  console.log(process.env.NODE_ENV);
+  console.log("NODE_ENV:", process.env.NODE_ENV);
+  console.log("LOCAL_URL:", process.env.REACT_APP_LOCAL_URL);
+  console.log("URL:", process.env.REACT_APP_URL);
 
   if (isLoading) {
     return (
