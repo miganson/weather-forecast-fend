@@ -11,6 +11,10 @@ import "./Header.css";
 
 function Header({ weatherDescription }) {
   const { logout, isAuthenticated, isLoading } = useAuth0();
+  let returnURL =
+    process.env.NODE_ENV === "development"
+      ? process.env.REACT_APP_LOCAL_URL
+      : process.env.REACT_APP_URL;
 
   if (isLoading) {
     return (
@@ -43,7 +47,7 @@ function Header({ weatherDescription }) {
       </div>
       {isAuthenticated && (
         <button
-          onClick={() => logout({ returnTo: window.location.origin })}
+          onClick={() => logout({ returnTo: returnURL })}
           className="header-button"
         >
           Log Out
