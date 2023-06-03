@@ -47,7 +47,9 @@ function Header({ weatherDescription }) {
       </div>
       {isAuthenticated && (
         <button
-          onClick={() => logout({ returnTo: returnURL })}
+          onClick={() =>
+            logout({ returnTo: "https://weather-forecast-app-m.netlify.app" })
+          }
           className="header-button"
         >
           Log Out
