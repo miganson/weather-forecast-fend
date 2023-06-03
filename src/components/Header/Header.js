@@ -11,7 +11,7 @@ import "./Header.css";
 
 function Header({ weatherDescription }) {
   const { logout, isAuthenticated, isLoading } = useAuth0();
-  let returnURL = process.env.REACT_APP_URL;
+  // let returnURL = process.env.REACT_APP_URL;
   // process.env.NODE_ENV === "production"
   //   ? process.env.REACT_APP_URL
   //   : process.env.REACT_APP_LOCAL_URL;
