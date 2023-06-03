@@ -17,6 +17,7 @@ function Header({ weatherDescription }) {
       : process.env.REACT_APP_URL;
 
   if (isLoading) {
+    console.log(process.env.NODE_ENV)
     return (
       <div className="loading-container">
         <div className="spinner"></div>
