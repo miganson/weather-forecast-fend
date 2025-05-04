@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap');
+
+.program-bg {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.program-card {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #fff;
+  scroll-behavior: smooth;
+}
+
+.program-header-row {
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  z-index: 10;
+}
+
+.program-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 0 2.5rem 2.5rem;
+}
+
+.program-logo {
+  height: 80px;
+  width: auto;
+}
+
+.burger-nav {
+  position: relative;
+}
+.program-header-row .burger-nav {
+  transform: translateY(-60px);
+}
+.burger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.burger-icon {
+  width: 24px;
+  height: 2px;
+  background: #070707;
+  position: relative;
+}
+.burger-icon::before,
+.burger-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #070707;
+}
+.burger-icon::before {
+  top: -8px;
+}
+.burger-icon::after {
+  top: 8px;
+}
+.burger-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.burger-dropdown button {
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+}
+
+.program-title {
+  font:
+    700 3.2rem 'Darker Grotesque',
+    sans-serif;
+  color: #070707;
+  margin: 0 0 1.2rem;
+}
+.program-subtitle {
+  font:
+    700 2.1rem 'Darker Grotesque',
+    sans-serif;
+  color: #ef0000;
+  margin: 0 0 2.2rem;
+  text-transform: uppercase;
+}
+.program-desc {
+  font:
+    1.25rem/1.5 'Darker Grotesque',
+    sans-serif;
+  color: #222;
+  margin-bottom: 3.5rem;
+}
+.program-cta-btn {
+  background: #ef0000;
+  color: #fff;
+  font:
+    700 1.5rem 'Darker Grotesque',
+    sans-serif;
+  padding: 1.1rem 2.8rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.program-cta-btn:hover {
+  background: #c90000;
+}
+
+.program-image-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.program-image {
+  width: 130%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center right;
+  border-radius: 0 8px 8px 0;
+  max-width: none;
+}
+
+.program-img-mobile {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .program-bg {
+    flex-direction: column;
+  }
+  .program-card {
+    height: auto;
+  }
+  .program-image {
+    height: 320px;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .burger-nav {
+    position: block;
+  }
+  .program-card {
+    background-color: #fff;
+    background-image: url('../assets/cropped-kick-pads.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 40% auto;
+    position: relative;
+    z-index: 1;
+  }
+  .program-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .program-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: url('../assets/Male Fighter Teeps Other Fighter.svg') no-repeat center bottom /
+      cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+  }
+  .program-title {
+    font-size: 2.1rem;
+  }
+  .program-subtitle {
+    font-size: 1.2rem;
+  }
+  .program-desc {
+    font-size: 1rem;
+  }
+  .program-cta-btn {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+  .program-image {
+    /* height: 180px; */
+    width: 130%;
+  }
+  .program-section--right {
+    text-align: right;
+    padding-left: 44%;
+    position: relative;
+    z-index: 2;
+  }
+  .program-section--right .program-cta-btn {
+    float: right;
+  }
+  .program-image-col {
+    display: none;
+  }
+  .program-img-mobile {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.program-card::-webkit-scrollbar {
+  width: 10px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+.program-card::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+.program-card::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* For Firefox */
+.program-card {
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 #f5f5f5;
+}

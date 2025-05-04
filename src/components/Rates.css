@@ -1,0 +1,135 @@
+/* src/components/Rates.css */
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap');
+
+.rates-header-row .burger-nav {
+  transform: translateY(-60px);
+}
+
+.classpacks-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.classpacks-overlay {
+  width: 100vw;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 2rem;
+}
+
+/* New header styles */
+.rates-header-row {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.rates-logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Existing styles */
+.classpacks-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #070707;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  font-family: 'Darker Grotesque', Arial, sans-serif;
+}
+
+.classpacks-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.classpacks-card {
+  background: #fff;
+  border: 2px solid #b71c1c;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classpacks-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #b71c1c;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'Darker Grotesque', Arial, sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.classpacks-card-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #b71c1c;
+  margin-bottom: 0.5rem;
+}
+
+.classpacks-card-desc {
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+  font-family: 'Darker Grotesque', Arial, sans-serif;
+}
+
+.classpacks-actions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.classpacks-btn {
+  background: #ef0000;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 1.1rem 2.8rem;
+  cursor: pointer;
+  font-family: 'Darker Grotesque', Arial, sans-serif;
+}
+
+.classpacks-btn--red:hover {
+  background: #c90000;
+}
+
+@media (max-width: 900px) {
+  .classpacks-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .classpacks-cards {
+    grid-template-columns: 1fr;
+  }
+  .classpacks-title {
+    font-size: 2rem;
+  }
+  .classpacks-btn {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
